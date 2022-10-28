@@ -15,5 +15,7 @@ Detail settings are in the /config/data.json file.
 ## tech stack
 
 Boostrap 5.0
+
 Vue.js@2
+
 vanilla javascript 
