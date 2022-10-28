@@ -68,12 +68,12 @@
         }
       },
       mounted() {
-        fetch('./config/data.json')
+        fetch('https://raw.githubusercontent.com/CBIIT/ccdi-maintenance-page/main/config/data.json')
         .then((res) => res.json())
         .then((json) => {
             console.log(json)
         })
-        .catch((err) => (error.value = err))
+        .catch((err) => ( console.log(err)))
 
 
       }
