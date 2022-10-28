@@ -27,6 +27,8 @@
        <span  v-html="project_logo"></span>
     </div>
 
+    <div id="line"  class="d-flex mb-auto w-100 mx-auto flex-column ">
+    </div>
     <main class="px-3 cover-container d-flex w-100 mx-auto flex-column  h-100 ">
       <div class="align-middle section">
       <h1>We'll be back soon</h1>
@@ -35,7 +37,7 @@
   Please <span v-html="project_email"></span> with any questions.</p>
     </div>
     </main>
-  <footer class="d-flex mb-auto w-100 mx-auto flex-column ">
+  <!-- <footer class="d-flex mb-auto w-100 mx-auto flex-column ">
    <ul>
       <li>
         <a href="http://www.hhs.gov/">U.S. Department of Health and Human Services</a>
@@ -48,22 +50,19 @@
       <li><a href="http://usa.gov">USA.gov</a></li>
     </ul>
     <h4>NIH ... Turning Discovery Into Health <sup>®</sup></h4>
-  </footer>
+  </footer> -->
 
-    
   </body>
 
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="https://unpkg.com/vue@next"></script>
-
-
   <script>
 
     const { createApp } = Vue
     const app = createApp({
       data() {
         return {
-          project_email: '<a href = "mailto:jonkiky@gmail.com">contact us </a> ',
+          project_email: '<a href = "ncichildhoodcancerdatainitiative@mail.nih.gov">contact us </a> ',
           project_logo : '<img src="https://raw.githubusercontent.com/CBIIT/mtp-frontend/6b62ab0a61e947768ab9177ad83b86e884c00052/CCDI-MT-Logo-COLOR.svg" width="400">'
         }
       },
@@ -71,11 +70,18 @@
         fetch('https://raw.githubusercontent.com/CBIIT/ccdi-maintenance-page/main/config/data.json')
         .then((res) => res.json())
         .then((json) => {
-            console.log(json)
+            if(json.data){
+              json.data.forEach(project=>{
+                if(document.url == project.project_url){
+                  this.$data.project_email = '<a href = "'+project.project_email+'">contact us </a> ';
+
+                  this.$data.project_logo = '<img src="'+project.project_logo+'" width="400">';
+                }
+              })
+            }
+
         })
         .catch((err) => ( console.log(err)))
-
-
       }
     })
 

@@ -2,8 +2,14 @@
 	"data" : [
 		{
 			"project_logo":"https://raw.githubusercontent.com/CBIIT/mtp-frontend/6b62ab0a61e947768ab9177ad83b86e884c00052/CCDI-MT-Logo-COLOR.svg",
+			"project_name":"Demo Project",
+			"project_email":"yizhen.chen@nih.gov",
+			"project_url":"https://cbiit.github.io/ccdi-maintenance-page/"
+		},
+		{	
+			"project_logo":"https://raw.githubusercontent.com/CBIIT/mtp-frontend/6b62ab0a61e947768ab9177ad83b86e884c00052/CCDI-MT-Logo-COLOR.svg",
 			"project_name":"MTP",
-			"project_email":"jonkiky@gmail.com",
+			"project_email":"ncichildhoodcancerdatainitiative@mail.nih.gov",
 			"project_url":"https://moleculartargets.ccdi.cancer.gov"
 		}
 	]
