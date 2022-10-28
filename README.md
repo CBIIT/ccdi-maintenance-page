@@ -1,5 +1,8 @@
 # Maintenance page for CCDI Project
 
+This is the design of maintenance page for CCPI apps. 
+
+
 Live demo : https://cbiit.github.io/ccdi-maintenance-page/
 
 
