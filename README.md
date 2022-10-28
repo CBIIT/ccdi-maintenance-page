@@ -19,6 +19,6 @@ Detail settings are in the /config/data.json file.
 
 Boostrap 5.0
 
-Vue.js@2
+Vue.js@3
 
 vanilla javascript 

@@ -53,6 +53,7 @@ li {
   background-color: #fff;
    position: fixed;
     top: 0;
+    height: 80px;
 }
 
 #line {
