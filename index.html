@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Yizhen Chen">
+    <link rel="apple-touch-icon" sizes="180x180" href="/profiles/custom/cgov_site/themes/custom/cgov/static/images/design-elements/icons/favicons/apple-touch-icon.png?v=1">
+    <link rel="icon" type="image/png" href="https://www.cancer.gov/profiles/custom/cgov_site/themes/custom/cgov/static/images/design-elements/icons/favicons/favicon-32x32.png?v=1" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://www.cancer.gov/profiles/custom/cgov_site/themes/custom/cgov/static/images/design-elements/icons/favicons/favicon-16x16.png?v=1" sizes="16x16">
+    <link rel="mask-icon" href="https://www.cancer.gov/profiles/custom/cgov_site/themes/custom/cgov/static/images/design-elements/icons/favicons/safari-pinned-tab.svg?v=1" color="#c0143c">
+    <link rel="shortcut icon" href="https://www.cancer.gov/profiles/custom/cgov_site/themes/custom/cgov/static/images/design-elements/icons/favicons/favicon.ico?v=1">
+    <link rel="canonical" href="https://www.cancer.gov/research/areas/childhood/childhood-cancer-data-initiative">
+    <title>CCDI Under Maintenance</title>
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <!-- google font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/cover.css" rel="stylesheet">
+  </head>
+  <body class="h-100  text-white bg-dark" >
+    <div id="header"  class="d-flex mb-auto w-100 mx-auto flex-column">
+       <span  v-html="project_logo"></span>
+    </div>
+
+    <main class="px-3 cover-container d-flex w-100 mx-auto flex-column  h-100 ">
+      <div class="align-middle section">
+      <h1>We'll be back soon</h1>
+      <p>We're sorry, the site is currently unavailable.
+  We will be back shortly. Thank you for your patience.
+  Please <span v-html="project_email"></span> with any questions.</p>
+    </div>
+    </main>
+  <footer class="d-flex mb-auto w-100 mx-auto flex-column ">
+   <ul>
+      <li>
+        <a href="http://www.hhs.gov/">U.S. Department of Health and Human Services</a>
+      </li>
+      <li> | </li>
+      <li><a href="http://www.nih.gov">National Institutes of Health</a> </li>
+       <li> | </li>
+      <li><a href="https://www.cancer.gov/">National Cancer Institute</a></li>
+       <li> | </li>
+      <li><a href="http://usa.gov">USA.gov</a></li>
+    </ul>
+    <h4>NIH ... Turning Discovery Into Health <sup>®</sup></h4>
+  </footer>
+
+    
+  </body>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+
+
+  <script>
+
+    const { createApp } = Vue
+    const app = createApp({
+      data() {
+        return {
+          project_email: '<a href = "mailto:jonkiky@gmail.com">contact us </a> ',
+          project_logo : '<img src="https://raw.githubusercontent.com/CBIIT/mtp-frontend/6b62ab0a61e947768ab9177ad83b86e884c00052/CCDI-MT-Logo-COLOR.svg" width="400">'
+        }
+      },
+      mounted() {
+        fetch('./config/data.json')
+        .then((res) => res.json())
+        .then((json) => {
+            console.log(json)
+        })
+        .catch((err) => (error.value = err))
+
+
+      }
+    })
+
+
+    app.mount('body')
+  </script>
+</html>
